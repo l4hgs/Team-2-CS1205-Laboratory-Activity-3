@@ -43,4 +43,16 @@ This design demonstrates:
 1. Make sure you have **Python 3** installed.
 2. Clone the repository:
    ```bash
+   git clone https://github.com/l4hgs/Team-2-CS1205-Laboratory-Activity-3.git
+   cd Team-2-CS1205-Laboratory-Activity-3
+3. Run the main script:
+   ```bash
+   python musical_instrument.py
+
+---
+
+## 🙏 Acknowledgements
+We would like to express our sincere gratitude to Ma'am Fatima, our CS1205 Laboratory instructor, for her guidance and support throughout this project. Her clear explanations and encouragement helped us understand the core concepts of object-oriented programming and inspired us to apply them creatively in this mini Python orchestra simulation.
+
+This project was made more enjoyable and meaningful because of the collaborative learning environment she fostered.
    
