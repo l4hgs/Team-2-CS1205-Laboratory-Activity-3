@@ -81,9 +81,9 @@ class Trumpet(WindInstrument):
         print(f"Pressing {self.num_valves} valves to change pitch.")
 
 # Plectrum Instruments
-class PlectrumInstrument(MusicalInstrument):  # Dapat same parent class
+class PlectrumInstrument(MusicalInstrument):
     def __init__(self, instrument_type: str, brand: str, sound_range: str):
-        super().__init__(instrument_type, brand, sound_range)  # Fixed: Proper init
+        super().__init__(instrument_type, brand, sound_range)
 
 class Banduria(PlectrumInstrument):
     def __init__(self, brand: str, sound_range: str, num_strings: int, body_shape: str):
@@ -145,41 +145,48 @@ class Tambourine(PercussionInstrument):
     def shake(self):
         print("Shaking the tambourine")
 
-# Demonstration of all instruments
+# Unified demonstration of all instruments
 if __name__ == "__main__":
-    print("=== String Instruments ===")
+    print("=== STRING INSTRUMENTS ===")
     guitar = Guitar("Fender", "E2-E6", "Nylon", 6, True)
     guitar.tune_instrument()
     guitar.play_sound()
     guitar.strum()
     
     violin = Violin("Stradivarius", "G3-A7", "Steel", 4, "4/4", "Horsehair")
+    violin.tune_instrument()
     violin.play_sound()
     violin.bow()
     
-    print("\n=== Wind Instruments ===")
+    print("\n=== WIND INSTRUMENTS ===")
     flute = Flute("Yamaha", "C4-C7", "Silver", "Boehm")
+    flute.tune_instrument()  # Now properly tuned
     flute.play_sound()
     flute.blow_air()
     
     trumpet = Trumpet("Bach", "F#3-C6", 3, 0.46)
+    trumpet.tune_instrument()  # Now properly tuned
     trumpet.play_sound()
     trumpet.press_valves()
     
-    print("\n=== Plectrum Instruments ===")
+    print("\n=== PLECTRUM INSTRUMENTS ===")
     banduria = Banduria("Reyes", "G3-G5", 14, "Pear-shaped")
+    banduria.tune_instrument()  # Now properly tuned
     banduria.play_sound()
     banduria.pluck()
     
     octavina = Octavina("Reyes", "G2-G4", 14, "Mahogany")
+    octavina.tune_instrument()  # Now properly tuned
     octavina.play_sound()
     octavina.strum()
     
-    print("\n=== Percussion Instruments ===")
+    print("\n=== PERCUSSION INSTRUMENTS ===")
     drum = Drum("Pearl", "A1-A2", 14.0, True)
+    drum.tune_instrument()  # Percussion instruments can be tuned too!
     drum.play_sound()
     drum.adjust_tension()
     
     tambourine = Tambourine("LP", "C5-C6", True)
+    tambourine.tune_instrument()  # Even tambourines need tuning
     tambourine.play_sound()
     tambourine.shake()
