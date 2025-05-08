@@ -82,13 +82,13 @@ class Trumpet(WindInstrument):
 
 # Plectrum Instruments
 class PlectrumInstrument(MusicalInstrument):
-    def __init__(self, instrument_type: str, brand: str, sound_range: str):
+    def __init__(self, instrument_type: str, brand: str, sound_range: str, num_strings: int):
         super().__init__(instrument_type, brand, sound_range)
-
+        self.num_strings = num_strings
+        
 class Banduria(PlectrumInstrument):
     def __init__(self, brand: str, sound_range: str, num_strings: int, body_shape: str):
-        super().__init__("Banduria", brand, sound_range)
-        self.num_strings = num_strings
+        super().__init__("Banduria", brand, sound_range, num_strings)
         self.body_shape = body_shape
 
     def play_sound(self):
@@ -99,15 +99,14 @@ class Banduria(PlectrumInstrument):
 
 class Octavina(PlectrumInstrument):
     def __init__(self, brand: str, sound_range: str, num_strings: int, material: str):
-        super().__init__("Octavina", brand, sound_range)
-        self.num_strings = num_strings
+        super().__init__("Octavina", brand, sound_range, num_strings)
         self.material = material
 
     def play_sound(self):
         print("Octavina is producing a mellow and warm tone.")
 
     def strum(self):
-        print(f"Strumming the {self.material} Octavina strings.")
+        print(f"Strumming the {self.num_strings} strings of {self.material} Octavina.")
 
 # Percussion Instruments
 class PercussionInstrument(MusicalInstrument):
